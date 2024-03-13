@@ -15,6 +15,14 @@ const router = createBrowserRouter(
       <Route path="*" element={<Home />}></Route>
       <Route path="register" element={<>Register</>}></Route>
       <Route path="login" element={<>Login</>}></Route>
+      {/* <Route
+        path="login"
+        element={LazyLoad(
+          () => import('@pages/Login/Login'),
+          localStorage.getItem('token') ? false : true,
+          '/'
+        )}
+      /> */}
     </Route>
   )
 );

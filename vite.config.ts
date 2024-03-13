@@ -17,23 +17,9 @@ export default defineConfig({
   //alias
   resolve: {
     alias: {
-      // "src/*": ["src/*"],
-      // "@pages/*": ["src/pages/*"],
-      // "@components/*": ["src/components/*"],
-      // "@hooks/*": ["src/hooks/*"],
-      // "@utils/*": ["src/utils/*"],
-      // "@assets/*": ["src/assets/*"],
-      // "@routes/*": ["src/routes/*"],
-      // "@apis/*": ["src/apis/*"],
-      // "@layouts/*": ["src/layouts/*"]
-      // src: '/src',
+      '@': '/src',
       '@pages': '/src/pages',
-      '@components': '/src/components',
-      '@hooks': '/src/hooks',
-      '@utils': '/src/utils',
-      '@assets': '/src/assets',
       '@routes': '/src/routes',
-      '@apis': '/src/apis',
       '@layouts': '/src/layouts',
     },
   },
