@@ -5,14 +5,17 @@ import {
   Route,
 } from 'react-router-dom';
 import MainLayout from '@layouts/MainLayout/MainLayout';
-import Home from '@pages/Home/Home';
+import LazyLoad from './LazyLoad/lazy';
 
 console.log('routes/index.tsx');
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="*" element={<MainLayout />}>
-      <Route path="*" element={<Home />}></Route>
+      <Route
+        path="*"
+        element={LazyLoad(() => import('@pages/Home/Home'), true, '/')}
+      ></Route>
       <Route path="register" element={<>Register</>}></Route>
       <Route path="login" element={<>Login</>}></Route>
       {/* <Route

@@ -1,4 +1,4 @@
-export default function PermissionDenied({ url }) {
+export default function PermissionDenied({ url }: { url: string | null }) {
   if (url) {
     window.location.href = url;
   }

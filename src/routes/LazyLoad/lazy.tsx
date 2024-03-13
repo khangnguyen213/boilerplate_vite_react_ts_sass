@@ -2,7 +2,17 @@ import { lazy, Suspense } from 'react';
 import Loading from './Loading';
 import PermissionDenied from './PermissionDenied';
 
-const LazyLoad = (importFunc, access = true, url) => {
+type LazyLoadType = (
+  importFunc: () => Promise<any>,
+  access: boolean,
+  url: string
+) => JSX.Element;
+
+const LazyLoad: LazyLoadType = (importFunc, access = true, url) => {
+  if (!access) {
+    return <PermissionDenied url={url}></PermissionDenied>;
+  }
+
   // const LazyComponent = lazy(() => {
   //   return new Promise((resolve) => {
   //     setTimeout(() => {
@@ -11,9 +21,6 @@ const LazyLoad = (importFunc, access = true, url) => {
   //   });
   // });
 
-  if (!access) {
-    return <PermissionDenied url={url}></PermissionDenied>;
-  }
   const LazyComponent = lazy(() => importFunc());
 
   return (
