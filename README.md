@@ -4,6 +4,12 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Addition of this boilerplate:
 
+## Usage
+
+- Clone this repository
+- Create an `.env` file in the root directory following the `.env.example` file
+- Run 'npm install' to install all dependencies
+
 ## Features
 
 - File structure in /src:
